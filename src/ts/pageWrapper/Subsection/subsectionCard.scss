@@ -1,0 +1,104 @@
+.subsection-card {
+  width: 100%;
+  height: 122px;
+  background-color: var(--body-background-color);
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+
+  text-decoration: none;
+  padding: 16px;
+  color: inherit;
+
+  position: relative;
+
+  @media screen and (min-width: 640px) {
+    width: 450px;
+    height: 132px;
+  }
+
+  div.image {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+
+    background-position: center;
+    background-size: cover;
+    background-color: #c9b2e6;
+
+    @media screen and (min-width: 640px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  div.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    span.title {
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      color: var(--heading-color);
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    > p {
+      font-size: 14px;
+      color: var(--secondary-text-color);
+
+      @media screen and (min-width: 640px) {
+        font-size: 16px;
+      }
+
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  div#progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 14px;
+
+    border-radius: 0 0 5px 5px;
+
+    overflow: hidden;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      padding: 1px 4px;
+
+      width: 0%;
+      height: 100%;
+
+      background-color: var(--secondary-color);
+
+      span {
+        color: var(--light-text);
+        font-weight: 700;
+        line-height: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+:root {
+  --primary-color: #60bf8f;
+  --dark-primary-color: #4aa979;
+  --secondary-color: #42a09b;
+  --dark-secondary-color: #3e9792;
+
+  --primary-color-gradient: linear-gradient(180deg, #60bf8f 82.29%, #54ab7f 100%);
+
+  --heading-color: #111111;
+  --secondary-text-color: #737373;
+  --normal-text-color: #333333;
+
+  --body-background-color: #f9fbfc;
+
+  --light-text: #ffffff;
+
+  --size-tablet: 640px;
+  --size-desktop: 1000px;
+
+  --short-transition-duration: 0.25s ease-out;
+  --medium-transition-duration: 0.5s ease-out;
+  --long-transition-duration: 1s ease-out;
+
+  --highlight-wrong-color: #bf6060;
+
+  --lesson-background-color: #f9f9f9;
+}
+
+html:has(body.contrast) {
+  &:root {
+    --heading-color: #000000;
+    --secondary-text-color: #333333;
+    --normal-text-color: #111111;
+
+    --body-background-color: #ffffff;
+
+    --light-text: #ffffff;
+
+    --highlight-wrong-color: #b73030;
+
+    --lesson-background-color: #ffffff;
+  }
+}

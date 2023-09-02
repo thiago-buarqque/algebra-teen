@@ -1,0 +1,172 @@
+#profile-page {
+  > div#user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+
+    div#avatar {
+      width: 64px;
+      height: 64px;
+
+      border-radius: 50%;
+      background-color: #76deff;
+      background-position: center;
+      background-size: cover;
+
+      margin-right: 16px;
+    }
+
+    div#info {
+      display: flex;
+      flex-direction: column;
+
+      > p {
+        color: var(--heading-color);
+        margin: 0;
+      }
+    }
+  }
+
+  div#achievements {
+    h2.subsection-title {
+      padding: 16px;
+      margin-bottom: 32px;
+      background: linear-gradient(
+        90deg,
+        #f1f1f1 0%,
+        rgba(241, 241, 241, 0.2) 99.75%
+      );
+      border-radius: 5px;
+      color: var(--heading-color);
+    }
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 32px;
+      padding: 0 0 2px 2px;
+
+      @media screen and (min-width: 640px) {
+        column-gap: 24px;
+      }
+
+      @media screen and (min-width: 1000px) {
+        column-gap: 32px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+div.achievement-card {
+  width: 100%;
+  background-color: var(--body-background-color);
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+
+  text-decoration: none;
+  padding: 16px;
+  color: inherit;
+
+  position: relative;
+
+  @media screen and (min-width: 640px) {
+    width: 450px;
+  }
+
+  div.image {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+
+    background-position: center;
+    background-size: cover;
+    background-color: #c9b2e6;
+
+    @media screen and (min-width: 640px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  div.content {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @media screen and (min-width: 640px) {
+      height: 100px;
+    }
+
+    span.title {
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      color: var(--heading-color);
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    > p {
+      font-size: 14px;
+      color: var(--secondary-text-color);
+
+      @media screen and (min-width: 640px) {
+        font-size: 16px;
+      }
+
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    div#progress-bar {
+      width: 100%;
+      height: 14px;
+
+      border-radius: 0 0 5px 5px;
+
+      margin-top: 8px;
+
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+
+      span {
+        font-weight: 700;
+        line-height: 14px;
+        color: var(--secondary-text-color);
+      }
+
+      > div#bar {
+        width: 100%;
+        height: 16px;
+        border-radius: 5px;
+        border: 1px solid #f1f1f1;
+        overflow: hidden;
+
+        background-color: #f9fbfc;
+        
+        div {
+          width: 0%;
+          height: 100%;
+
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+  }
+}

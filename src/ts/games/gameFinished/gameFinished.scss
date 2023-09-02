@@ -1,0 +1,60 @@
+@keyframes LessonEndScreenEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#game-summary-screen {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
+
+  background-color: var(--lesson-background-color);
+
+  padding: 2px;
+
+  &.show {
+    animation: LessonEndScreenEnter 1s forwards;
+  }
+
+  div#score span {
+    font-size: 1rem;
+    list-style: 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    @media screen and (min-width: 1000px) {
+      font-size: 1.125rem;
+      list-style: 1.125rem;
+    }
+
+    > svg {
+      width: 18px;
+
+      @media screen and (min-width: 1000px) {
+        width: 24px;
+      }
+    }
+  }
+
+  div#options {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 24px;
+  }
+}

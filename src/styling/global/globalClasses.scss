@@ -1,0 +1,12 @@
+.rounded {
+  border-radius: 5px;
+}
+
+.hidden-element {
+  display: none !important;
+}
+
+.invisible-element {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,117 @@
+@import "./Desktop/DesktopNavbar.scss";
+@import "./Mobile/MobileHeader.scss";
+@import "./Mobile/MobileNavBar.scss";
+
+div.profile-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -100%;
+
+  width: 200%;
+
+  z-index: 2;
+
+  padding: 8px 16px;
+
+  background-color: #fff;
+  border-radius: 5px;
+
+  @media screen and (min-width: 1000px) {
+    width: 100%;
+    bottom: calc(100% + 8px);
+    left: 0;
+    top: unset;
+  }
+
+  > button {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 16px;
+
+    &:hover {
+      background-color: #fbfbfb;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--light-text);
+    }
+
+    > svg {
+      width: 18px;
+      margin-right: 8px;
+    }
+  }
+
+  .log-out,
+  .settings {
+    width: 100%;
+  }
+}
+
+
+#settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 24px;
+
+  z-index: 2;
+
+  background-color: rgba($color: #000000, $alpha: 0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    width: 100%;
+    max-width: 460px;
+
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 5px;
+    position: relative;
+
+    button#close-button {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+
+      background: none;
+      border: none;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 8px 0 24px 0;
+    }
+
+    div.section {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #D5D5D5;
+      margin-bottom: 24px;
+
+      > span {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+    }
+
+    button#delete-account-button {
+      background-color: transparent;
+      
+      > span {
+        font-size: 14px;
+        color: var(--highlight-wrong-color);
+        text-decoration: underline;
+        font-weight: 600;
+      }
+    }
+  }
+}

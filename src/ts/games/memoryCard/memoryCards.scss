@@ -1,0 +1,245 @@
+#cards-wrapper {
+  width: 100%;
+  padding: 16px 0;
+
+  @media screen and (min-width: 1000px) {
+    padding: 32px 0;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    position: relative;
+    display: flex;
+    padding: 0;
+  }
+
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    row-gap: 16px;
+    column-gap: 16px;
+    justify-items: center;
+    margin: 0 auto 0 auto;
+
+    @media screen and (min-width: 720px) {
+      max-width: (220px * 3) + 32px;
+      grid-template-columns: repeat(3, auto);
+    }
+
+    @media screen and (min-width: 1000px) {
+      max-width: (220px * 4) + 32px;
+      grid-template-columns: repeat(4, auto);
+      margin: auto;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: (220px * 6) + (32px * 6);
+      grid-template-columns: repeat(6, auto);
+      row-gap: 32px;
+      column-gap: 32px;
+    }
+
+    .card {
+      cursor: pointer;
+      width: 160px;
+      height: 300px;
+      background-color: #eaeaea;
+      border-radius: 5px;
+
+      @media screen and (min-width: 400px) {
+        width: 180px;
+      }
+
+      @media screen and (min-width: 720px) {
+        width: 220px;
+      }
+
+      &.opened div.inner {
+        transform: rotateY(180deg);
+      }
+
+      div.inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.2s;
+        transform-style: preserve-3d;
+        position: relative;
+        padding: 8px;
+
+        div.front,
+        div.back {
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+
+        div.front {
+          width: 100%;
+          height: 100%;
+
+          border-radius: 5px;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          padding: 8px;
+
+          transform: rotateY(180deg);
+
+          > div {
+            border: 1px solid #a6a6a6;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            padding: 8px;
+            position: relative;
+
+            .background {
+              width: 100%;
+              height: 100%;
+
+              padding: 0 8px 4px 8px;
+
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-between;
+
+              div.triangle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: -8px;
+
+                width: 24px;
+                height: 24px;
+
+                background-image: linear-gradient(to bottom right, transparent 50%, #f878b0 0),
+                  linear-gradient(to top right, #f878b0 50%, transparent 0);
+                background-size: 50% 100%;
+                background-repeat: no-repeat;
+                background-position: left, right;
+
+                @media screen and (min-width: 800px) {
+                  width: 28px;
+                  height: 28px;
+                }
+
+                svg {
+                  width: 8px;
+                  margin-top: 2px;
+
+                  @media screen and (min-width: 800px) {
+                    width: 12px;
+                    margin-top: 5px;
+                  }
+                }
+              }
+
+              > h1 {
+                font-size: 72px;
+                line-height: 72px;
+                margin: 0;
+              }
+
+              > p {
+                font-size: 10px;
+                font-weight: 600;
+                color: #979797;
+                text-align: center;
+                margin: 0;
+
+                @media screen and (min-width: 400px) {
+                  font-size: 12px;
+                }
+
+                @media screen and (min-width: 1000px) {
+                  font-size: 14px;
+                }
+              }
+            }
+
+            .content {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 2;
+              padding: 8px;
+
+              > p {
+                color: #f878b0;
+                text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+                font-weight: 600;
+                text-align: center;
+                font-size: 1.125rem;
+              }
+
+              span.card-latex-equation {
+                font-family: Montserrat;
+                font-size: 18px;
+                font-weight: 700;
+
+                letter-spacing: 2px;
+
+                display: block;
+                margin: 8px 0;
+              }
+            }
+          }
+        }
+
+        div.back {
+          width: 100%;
+          height: 100%;
+
+          border-radius: 5px;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          background-color: var(--secondary-color);
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg {
+            width: 32px;
+          }
+        }
+      }
+
+      &.equation {
+        div.inner .front {
+          .background div.triangle {
+            background-image: linear-gradient(to bottom right, transparent 50%, #5398ad 0),
+              linear-gradient(to top right, #5398ad 50%, transparent 0);
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+            background-position: left, right;
+          }
+          .content {
+            > p {
+              color: #5398ad;
+            }
+          }
+        }
+
+        div.inner .back {
+          svg path {
+            fill: #333;
+          }
+        }
+      }
+    }
+  }
+}

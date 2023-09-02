@@ -1,0 +1,48 @@
+.lesson-step-wrapper {
+  position: relative;
+
+  &:hover {
+    .options {
+      opacity: 1;
+    }
+  }
+
+  p.lesson-index {
+    width: auto;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .options {
+    position: absolute;
+    top: 0;
+    right: -48px;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 8px;
+
+    button {
+      padding: 8px;
+      border-radius: 5px;
+    }
+  }
+}
+#existing-lessons {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+
+  button {
+    display: block;
+    margin-bottom: 8px;
+    background: none;
+    border: 2px solid #f1f1f1;
+  }
+}

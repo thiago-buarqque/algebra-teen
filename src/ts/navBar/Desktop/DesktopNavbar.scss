@@ -1,0 +1,105 @@
+nav#desktop-navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--body-background-color);
+  width: 300px;
+  height: 100%;
+
+  z-index: 1;
+
+  border-right: 2px solid #f0f0f0;
+  grid-area: "navbar";
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 42px;
+
+  padding: 56px 24px;
+
+  font-size: 1.125rem;
+
+  flex-shrink: 0;
+
+  span#logo {
+    font-size: 3rem;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  @import "./profile.scss";
+
+  ul#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0px;
+    gap: 16px;
+
+    list-style-type: none;
+
+    li {
+      width: 100%;
+      height: 40px;
+
+      display: flex;
+      align-items: center;
+
+      &.main-color-gradient {
+        background: var(--primary-color-gradient);
+
+        svg path {
+          stroke: var(--light-text);
+        }
+      }
+
+      &:hover:not(.main-color-gradient) {
+        background-color: #f2f4f5;
+        a span,
+        a svg path {
+          color: var(--normal-text-color);
+          stroke: var(--normal-text-color);
+        }
+      }
+    }
+
+    li > a {
+      width: 100%;
+      height: 100%;
+
+      padding-left: 25%;
+
+      display: flex;
+      align-items: center;
+
+      column-gap: 8px;
+
+      text-decoration: none;
+
+      > .nav-icon {
+        width: 24px;
+        display: flex;
+      }
+    }
+
+    li.main-color-gradient a span {
+      color: var(--light-text);
+      font-weight: bold;
+    }
+
+    li span {
+      font-family: "Nunito";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.125rem;
+      line-height: 100%;
+
+      color: var(--secondary-text-color);
+    }
+  }
+}

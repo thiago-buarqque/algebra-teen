@@ -1,0 +1,26 @@
+.lesson-paragraph {
+  font-size: 1rem;
+  margin: 0 0 16px 0;
+  letter-spacing: 1px;
+
+  
+  @media screen and (min-width: 640px) {
+    font-size: 1.125rem;
+  }
+  
+  .lesson-text-equation {
+    display: inline;
+  }
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.bold {
+  font-weight: bold;
+}

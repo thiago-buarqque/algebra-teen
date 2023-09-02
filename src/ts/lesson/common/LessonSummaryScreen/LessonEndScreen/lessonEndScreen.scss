@@ -1,0 +1,89 @@
+
+// #lesson-steps-wrapper:has(#lesson-end-screen) {
+//   @media screen and (max-height: 900px) {
+//     overflow: auto !important;
+//     padding-bottom: 4px !important;
+//   }
+// }
+
+@keyframes LessonEndScreenEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#lesson-end-screen {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 2px;
+
+  animation: LessonEndScreenEnter 1s forwards;
+
+  @media screen and (max-height: 900px) {
+    overflow: auto !important;
+    padding-bottom: 4px !important;
+  }
+
+  #achievements {
+    width: 100%;
+
+    > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (min-width: 1000px) {
+        flex-direction: row;
+        column-gap: 16px;
+      }
+    }
+
+    > p {
+      font-size: 1rem;
+      @media screen and (min-width: 1000px) {
+        text-align: center;
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  #options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 24px;
+
+    margin: 32px 0;
+
+    @media screen and (min-width: 1000px) {
+      column-gap: 24px;
+      flex-direction: row;
+    }
+  }
+  #next-lesson {
+    padding-bottom: 4px;
+    > p {
+      margin-top: 0;
+      font-size: 1rem;
+      @media screen and (min-width: 1000px) {
+        font-size: 1.125rem;
+      }
+      text-align: left;
+    }
+  }
+}

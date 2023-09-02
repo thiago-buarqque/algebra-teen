@@ -1,0 +1,82 @@
+.-base-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-height: 50px;
+
+  padding: 16px 24px;
+  border-radius: 5px;
+
+  column-gap: 8px;
+  transition: all var(--short-transition-duration);
+
+  span {
+    color: var(--normal-text-color);
+    font-size: 14px;
+
+    text-transform: uppercase;
+  }
+
+  svg path {
+    stroke: var(--normal-text-color);
+  }
+}
+
+.primary-button {
+  @extend .-base-button;
+
+  background-color: var(--primary-color);
+  border: 2px solidvar(--dark-primary-color);
+
+  &:hover {
+    background-color: var(--dark-primary-color);
+  }
+
+  span {
+    color: #fff;
+    font-weight: 800;
+  }
+
+  svg path {
+    stroke: #fff;
+  }
+}
+
+.secondary-button {
+  @extend .primary-button;
+  background-color: var(--secondary-color);
+  border: none;
+
+  &:hover {
+    background-color: var(--dark-secondary-color);
+  }
+}
+
+.tertiary-button {
+  @extend .-base-button;
+
+  &.small {
+    padding: 8px 16px;
+
+    span {
+      text-transform: unset;
+    }
+  }
+
+  background-color: transparent;
+  border: 1px solid #d5d5d5;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+
+  span {
+    color: var(--normal-text-color);
+    font-weight: 600;
+  }
+
+  svg path {
+    stroke: var(--normal-text-color);
+  }
+}

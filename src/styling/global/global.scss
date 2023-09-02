@@ -1,0 +1,102 @@
+a:visited {
+  color: unset;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+
+  color: var(--normal-text-color);
+
+  &:disabled {
+    opacity: 60%;
+    cursor: default;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+svg g {
+  transform-origin: center;
+  transition: all var(--medium-transition-duration);
+}
+
+.katex {
+  font-size: 1.125rem;
+  @media screen and (min-width: 1000px) {
+    font-size: 1.375rem;
+  }
+  > * {
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+.katex-html {
+  display: none;
+}
+
+@import "./typography.scss";
+@import "./globalClasses.scss";
+@import "./buttons.scss";
+
+// Workaround for balance animations
+.balance-frame-0 {
+  g#Platform {
+    .object {
+      opacity: 0;
+    }
+  }
+}
+.balance-frame-1 {
+  g#Platform {
+    transform: rotate(15deg);
+    .object#square-7kg,
+    .object#triangle-3kg {
+      opacity: 1;
+    }
+  }
+}
+
+.balance-frame-2 {
+
+  &.kg2 {
+    g#Platform {
+      transform: rotate(10deg);
+      .object#square-unknown-2 {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.kg4 {
+    g#Platform {
+      transform: rotate(0deg);
+      .object#square-unknown-4 {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.kg6 {
+    g#Platform {
+      transform: rotate(-10deg);
+      .object#square-unknown-6 {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.kg1 {
+    g#Platform {
+      transform: rotate(12deg);
+      .object#square-unknown-1 {
+        opacity: 1;
+      }
+    }
+  }
+}
